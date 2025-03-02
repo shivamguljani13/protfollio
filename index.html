@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepmala Pathak | Digital Marketing Portfolio</title>
+    <style>
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #166088;
+            --accent: #4ec5c1;
+            --light: #f5f5f5;
+            --dark: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .hero {
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .hero-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero h1 {
+            margin-top: 1.5rem;
+            font-size: 2.5rem;
+        }
+        
+        .hero h2 {
+            margin-top: 0.5rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .hero-buttons {
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin: 0 0.5rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #3ab8b4;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .skills {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background-color: var(--accent);
+            border-radius: 5px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(74, 111, 165, 0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-title {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .portfolio-category {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .testimonials {
+            background-color: #f9f9f9;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 4rem;
+            color: rgba(74, 111, 165, 0.1);
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .contact {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .btn-form {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .btn-form:hover {
+            background-color: #3ab8b4;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent);
+        }
+        
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+            }
+            
+            .nav-links li {
+                margin: 0 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">DP</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="hero" id="home">
+                <img src="/api/placeholder/150/150" alt="Deepmala Pathak" class="hero-img">
+                <h1>Deepmala Pathak</h1>
+                <h2>Digital Marketing Specialist</h2>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Deepmala Pathak, a passionate digital marketing specialist with over 5 years of experience in helping businesses grow their online presence and achieve their marketing goals.</p>
+                    <p>I specialize in creating data-driven marketing strategies that deliver real results. My approach combines creative thinking with analytical skills to develop campaigns that not only look great but also perform exceptionally well.</p>
+                    <p>Having worked with clients across various industries, I understand the unique challenges different businesses face and how to overcome them with effective digital marketing solutions.</p>
+                </div>
+                <div class="skills">
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Search Engine Optimization (SEO)</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Social Media Marketing</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Content Marketing</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Pay-Per-Click (PPC) Advertising</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Email Marketing</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">My Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">SEO</div>
+                    <h3 class="service-title">Search Engine Optimization</h3>
+                    <p>Improve your website's visibility in search engines with my comprehensive SEO services. I'll help you rank higher, drive more organic traffic, and increase your online presence.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">SMM</div>
+                    <h3 class="service-title">Social Media Marketing</h3>
+                    <p>Engage with your audience and build brand awareness through effective social media strategies. I'll help you create compelling content and manage your social media presence.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">CM</div>
+                    <h3 class="service-title">Content Marketing</h3>
+                    <p>Tell your brand's story with high-quality, engaging content that resonates with your target audience. From blog posts to videos, I'll help you create content that converts.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">PPC</div>
+                    <h3 class="service-title">PPC Advertising</h3>
+                    <p>Maximize your ROI with data-driven PPC campaigns across Google, Facebook, and other platforms. I'll help you reach the right audience and drive conversions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">EM</div>
+                    <h3 class="service-title">Email Marketing</h3>
+                    <p>Build meaningful relationships with your customers through targeted email campaigns. I'll help you create personalized email strategies that drive engagement and sales.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">A</div>
+                    <h3 class="service-title">Analytics & Reporting</h3>
+                    <p>Gain valuable insights into your marketing performance with detailed analytics and reporting. I'll help you understand your data and make informed decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">My Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="e-commerace_image.jpeg" alt="E-commerce SEO Campaign" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">E-commerce SEO Campaign</h3>
+                        <p class="portfolio-category">Search Engine Optimization</p>
+                        <p>Increased organic traffic by 150% and sales by 75% for an online fashion retailer through comprehensive SEO strategy.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="download.jpeg" alt="Social Media Campaign" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Product Launch Campaign</h3>
+                        <p class="portfolio-category">Social Media Marketing</p>
+                        <p>Managed a successful product launch campaign for a tech startup, generating over 10,000 leads and 2,500 sales.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="content.png" alt="Content Strategy" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Content Strategy</h3>
+                        <p class="portfolio-category">Content Marketing</p>
+                        <p>Developed a comprehensive content strategy for a B2B SaaS company, resulting in 200% increase in blog traffic.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="googl;e_ads.png" alt="Google Ads Campaign" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Google Ads Campaign</h3>
+                        <p class="portfolio-category">PPC Advertising</p>
+                        <p>Optimized Google Ads campaigns for a local business, reducing cost per acquisition by 40% while increasing conversions by 65%.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="emage marketing.jpeg" alt="Email Marketing Campaign" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Email Marketing Campaign</h3>
+                        <p class="portfolio-category">Email Marketing</p>
+                        <p>Created an email nurture sequence for a health & wellness brand, achieving 45% open rate and 15% conversion rate.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="analytics_dashboard.jpeg" alt="Analytics Dashboard" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Analytics Dashboard</h3>
+                        <p class="portfolio-category">Analytics & Reporting</p>
+                        <p>Developed custom analytics dashboards for a marketing agency, streamlining reporting processes and improving client satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Deepmala completely transformed our online presence. Her SEO strategies helped us rank for competitive keywords and significantly increased our organic traffic. She's a true professional who delivers results!</p>
+                    <div class="testimonial-author">
+                        <img src="/api/placeholder/50/50" alt="Sarah Johnson" class="author-img">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>CEO, FashionFit</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Working with Deepmala on our social media marketing was a game-changer. She developed a comprehensive strategy that helped us engage with our audience and increase our following by 200% in just six months.</p>
+                    <div class="testimonial-author">
+                        <img src="/api/placeholder/50/50" alt="Michael Chen" class="author-img">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Founder, TechNova</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Deepmala's expertise in PPC advertising helped us maximize our advertising budget and reach our target audience effectively. Her data-driven approach and continuous optimization resulted in a 45% increase in conversions.</p>
+                    <div class="testimonial-author">
+                        <img src="/api/placeholder/50/50" alt="Emma Rodriguez" class="author-img">
+                        <div class="author-info">
+                            <h4>Emma Rodriguez</h4>
+                            <p>Marketing Director, GrowSmart</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Kanpur, India</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>deepmala.pathak@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91 98765 43210</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">FB</a>
+                        <a href="#" class="social-link">TW</a>
+                        <a href="#" class="social-link">IG</a>
+                        <a href="#" class="social-link">LI</a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-form">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Deepmala Pathak. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
